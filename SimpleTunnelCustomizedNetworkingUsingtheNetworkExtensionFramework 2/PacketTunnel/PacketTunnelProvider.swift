@@ -30,10 +30,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider, TunnelDelegate, ClientTunnel
 
 	/// Begin the process of establishing the tunnel.
 	override func startTunnelWithOptions(options: [String : NSObject]?, completionHandler: (NSError?) -> Void) {
-        let service = NSNetService(domain: "local", type: "_tunnelserver._tcp", name: self.protocolConfiguration.serverAddress!)
-        service.delegate = self
-        service.publishWithOptions(NSNetServiceOptions.ListenForConnections)
-		service.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
 		let newTunnel = ClientTunnel()
 		newTunnel.delegate = self
 

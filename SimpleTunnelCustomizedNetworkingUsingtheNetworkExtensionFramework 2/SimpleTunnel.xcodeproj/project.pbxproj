@@ -28,6 +28,8 @@
 		B0993D4B1A8A6F8100510E18 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D331A8A654000510E18 /* Connection.swift */; };
 		B0993D4C1A8A6F8500510E18 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D351A8A656600510E18 /* util.swift */; };
 		B0993D4E1A8A72E000510E18 /* ClientTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D4D1A8A72E000510E18 /* ClientTunnel.swift */; };
+		B973D1231C4BCCB300B3B2A8 /* ServerTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B973D1221C4BCCB300B3B2A8 /* ServerTunnel.swift */; };
+		B973D1241C4BCD7C00B3B2A8 /* SimpleTunnelServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01A16941A8A615F00BC9EFD /* SimpleTunnelServices.framework */; };
 		C418873A1AC60F7E004F638A /* ConnectionRuleAddEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41887391AC60F7E004F638A /* ConnectionRuleAddEditController.swift */; };
 		C418873C1AC60FE8004F638A /* ConnectionRuleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418873B1AC60FE8004F638A /* ConnectionRuleListController.swift */; };
 		C41B263B1A8AF5DF000689D6 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0993D351A8A656600510E18 /* util.swift */; };
@@ -201,6 +203,7 @@
 		B0993D451A8A6E1D00510E18 /* ServerTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTunnel.swift; sourceTree = "<group>"; };
 		B0993D4D1A8A72E000510E18 /* ClientTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTunnel.swift; sourceTree = "<group>"; };
 		B0D507F51A8943FD005D1195 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PacketTunnelProvider.swift; path = PacketTunnel/PacketTunnelProvider.swift; sourceTree = SOURCE_ROOT; };
+		B973D1221C4BCCB300B3B2A8 /* ServerTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTunnel.swift; sourceTree = "<group>"; };
 		C41887391AC60F7E004F638A /* ConnectionRuleAddEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionRuleAddEditController.swift; sourceTree = "<group>"; };
 		C418873B1AC60FE8004F638A /* ConnectionRuleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionRuleListController.swift; sourceTree = "<group>"; };
 		C43B49251B1F610B0007B509 /* ServerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtils.h; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B973D1241C4BCD7C00B3B2A8 /* SimpleTunnelServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 			children = (
 				B0D507F51A8943FD005D1195 /* PacketTunnelProvider.swift */,
 				C4B602051A8E61B300A3C5D4 /* ClientTunnelConnection.swift */,
+				B973D1221C4BCCB300B3B2A8 /* ServerTunnel.swift */,
 				B07CCB6F1A89414500A4F1E5 /* Supporting Files */,
 			);
 			name = PacketTunnel;
@@ -751,6 +756,7 @@
 				C49885801ACB12BB00E490C3 /* ProxySettingsController.swift in Sources */,
 				C4BB8C451AD4985800B58141 /* StatusViewController.swift in Sources */,
 				C441D26B1ACB797F00C5084C /* ProxyAutoConfigScriptController.swift in Sources */,
+				B973D1231C4BCCB300B3B2A8 /* ServerTunnel.swift in Sources */,
 				C456CDF91AC0AACB00CEB42C /* ListViewController.swift in Sources */,
 				C46318B31AC35C3300849278 /* StringListController.swift in Sources */,
 				C4751DE01ACB509A00C116E5 /* ProxyServerAddEditController.swift in Sources */,
