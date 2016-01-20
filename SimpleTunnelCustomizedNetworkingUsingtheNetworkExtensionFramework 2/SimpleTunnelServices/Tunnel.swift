@@ -81,10 +81,10 @@ public class Tunnel: NSObject {
     public weak var delegate: TunnelDelegate?
 
 	/// The current set of logical connections open within the tunnel.
-    var connections = [Int: Connection]()
+    public var connections = [Int: Connection]()
 
 	/// The list of data that needs to be written to the tunnel connection when possible.
-	let savedData = SavedData()
+	public let savedData = SavedData()
 
 	/// The SimpleTunnel Bonjour service type.
 	class var serviceType: String { return "_tunnelserver._tcp" }
@@ -114,7 +114,7 @@ public class Tunnel: NSObject {
 	// MARK: Interface
 
 	/// Close the tunnel.
-	func closeTunnel() {
+	public func closeTunnel() {
 		for connection in connections.values {
 			connection.tunnel = nil
 			connection.abort()

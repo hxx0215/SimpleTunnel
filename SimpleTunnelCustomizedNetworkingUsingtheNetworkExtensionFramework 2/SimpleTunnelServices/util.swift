@@ -17,7 +17,7 @@ public enum SimpleTunnelError: ErrorType {
 }
 
 /// A queue of blobs of data
-class SavedData {
+public class SavedData {
 
 	// MARK: Properties
 
@@ -25,7 +25,7 @@ class SavedData {
 	var chain = [(data: NSData, offset: Int)]()
 
 	/// A convenience property to determine if the list is empty.
-	var isEmpty: Bool {
+	public var isEmpty: Bool {
 		return chain.isEmpty
 	}
 
@@ -37,7 +37,7 @@ class SavedData {
 	}
 
 	/// Write as much of the data in the list as possible to a stream
-	func writeToStream(stream: NSOutputStream) -> Bool {
+	public func writeToStream(stream: NSOutputStream) -> Bool {
 		var result = true
 		var stopIndex: Int?
 

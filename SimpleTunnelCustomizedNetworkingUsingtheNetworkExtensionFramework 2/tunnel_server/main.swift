@@ -26,7 +26,7 @@ signal(SIGTERM, ignore)
 signal(SIGINT, ignore)
 
 let portString = "9999"//Process.arguments[1]
-let configurationPath = "/Users/hxx/Downloads/SimpleTunnelCustomizedNetworkingUsingtheNetworkExtensionFramework 2/tunnel_server/config.plist"//Process.arguments[2]
+let configurationPath = "/Users/hxx/work/myproject/SimpleTunnel/SimpleTunnelCustomizedNetworkingUsingtheNetworkExtensionFramework 2/tunnel_server/config.plist"//Process.arguments[2]
 let networkService: NSNetService
 
 // Initialize the server.

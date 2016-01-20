@@ -66,7 +66,34 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
 
 	/// Handle a stream event.
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
-        print(aStream)
+        switch aStream{
+        case writeStream!:
+            switch eventCode{
+            case [.HasSpaceAvailable]:
+                if !savedData.isEmpty {
+                    guard savedData.writeToStream(writeStream!) else {
+                        closeTunnel()
+                        delegate?.tunnelDidClose(self)
+                        break
+                    }
+
+                    if savedData.isEmpty {
+                        for connection in connections.values {
+                            connection.resume()
+                        }
+                    }
+                }
+            default:
+                break
+            }
+        case readStream!:
+            switch eventCode{
+            default:
+                break
+            }
+        default:
+            break
+        }
     }
 }
 
