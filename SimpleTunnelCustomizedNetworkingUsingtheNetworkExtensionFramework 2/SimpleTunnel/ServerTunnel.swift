@@ -64,6 +64,9 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
     }
 	// MARK: NSStreamDelegate
 
+	func handleBytesAvailable() -> Bool {
+        return false
+    }
 	/// Handle a stream event.
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
         switch aStream{
@@ -87,9 +90,24 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
                 break
             }
         case readStream!:
-            switch eventCode{
-            default:
-                break
+            var needCloseTunnel = false
+            switch eventCode {
+                case [.HasBytesAvailable]:
+                    needCloseTunnel = !handleBytesAvailable()
+
+                case [.OpenCompleted]:
+                    delegate?.tunnelDidOpen(self)
+
+                case [.ErrorOccurred], [.EndEncountered]:
+                    needCloseTunnel = true
+
+                default:
+                    break
+            }
+
+            if needCloseTunnel {
+                closeTunnel()
+                delegate?.tunnelDidClose(self)
             }
         default:
             break
