@@ -93,7 +93,8 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
             var needCloseTunnel = false
             switch eventCode {
                 case [.HasBytesAvailable]:
-                    needCloseTunnel = !handleBytesAvailable()
+//                    needCloseTunnel = !handleBytesAvailable()
+                break
 
                 case [.OpenCompleted]:
                     delegate?.tunnelDidOpen(self)
