@@ -65,8 +65,59 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
 	// MARK: NSStreamDelegate
 
 	func handleBytesAvailable() -> Bool {
-        return false
-    }
+
+		guard let stream = readStream else { return false }
+		var readBuffer = [UInt8](count: Tunnel.maximumMessageSize, repeatedValue: 0)
+
+		repeat {
+			var toRead = 0
+			var bytesRead = 0
+
+            if packetBytesRemaining == 0 {
+				// Currently reading the total length of the packet.
+				toRead = sizeof(UInt32.self) - packetBuffer.length
+			}
+			else {
+				// Currently reading the packet payload.
+				toRead = packetBytesRemaining > readBuffer.count ? readBuffer.count : packetBytesRemaining
+			}
+
+			bytesRead = stream.read(&readBuffer, maxLength: toRead)
+
+			guard bytesRead > 0 else {
+				return false
+			}
+
+			packetBuffer.appendBytes(readBuffer, length: bytesRead)
+
+			if packetBytesRemaining == 0 {
+				// Reading the total length, see if the 4 length bytes have been received.
+				if packetBuffer.length == sizeof(UInt32.self) {
+					var totalLength: UInt32 = 0
+					packetBuffer.getBytes(&totalLength, length: sizeofValue(totalLength))
+
+					guard totalLength <= UInt32(Tunnel.maximumMessageSize) else { return false }
+
+					// Compute the length of the payload.
+					packetBytesRemaining = Int(totalLength) - sizeofValue(totalLength)
+					packetBuffer.length = 0
+				}
+			}
+			else {
+				// Read a portion of the payload.
+				packetBytesRemaining -= bytesRead
+				if packetBytesRemaining == 0 {
+					// The entire packet has been received, process it.
+					if !handlePacket(packetBuffer) {
+						return false
+					}
+					packetBuffer.length = 0
+				}
+			}
+		} while stream.hasBytesAvailable
+
+		return true
+	}
 	/// Handle a stream event.
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
         switch aStream{
@@ -93,7 +144,7 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
             var needCloseTunnel = false
             switch eventCode {
                 case [.HasBytesAvailable]:
-//                    needCloseTunnel = !handleBytesAvailable()
+                    needCloseTunnel = !handleBytesAvailable()
                 break
 
                 case [.OpenCompleted]:

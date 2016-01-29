@@ -93,7 +93,7 @@ public class Tunnel: NSObject {
 	class var serviceDomain: String { return "local" }
 
 	/// The maximum size of a SimpleTunnel message.
-	class var maximumMessageSize: Int { return 128 * 1024 }
+	public class var maximumMessageSize: Int { return 128 * 1024 }
 
 	/// The maximum size of a single tunneled IP packet.
 	class var packetSize: Int { return 8192 }
@@ -271,7 +271,7 @@ public class Tunnel: NSObject {
 	}
 
 	/// Process a message payload.
-	func handlePacket(packetData: NSData) -> Bool {
+	public func handlePacket(packetData: NSData) -> Bool {
 		let properties: [String: AnyObject]
 		do {
 			properties = try NSPropertyListSerialization.propertyListWithData(packetData, options: [.Immutable], format: nil) as! [String: AnyObject]
