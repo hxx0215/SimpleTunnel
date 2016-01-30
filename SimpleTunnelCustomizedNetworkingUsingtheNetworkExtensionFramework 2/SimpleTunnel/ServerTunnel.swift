@@ -105,6 +105,7 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate{
 			}
 			else {
 				// Read a portion of the payload.
+                
 				packetBytesRemaining -= bytesRead
 				if packetBytesRemaining == 0 {
 					// The entire packet has been received, process it.
