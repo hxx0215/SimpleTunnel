@@ -49,6 +49,13 @@ class ServerTunnel: Tunnel, TunnelDelegate, NSStreamDelegate {
 
 	// MARK: Class Methods
 
+    class func startServer(address: String) -> NSNetService{
+        let service = NSNetService(domain: "local", type: "_tunnelserver._tcp", name: address)
+        service.delegate = ServerTunnel.serviceDelegate
+        service.publishWithOptions(NSNetServiceOptions.ListenForConnections)
+		service.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        return service
+    }
 	/// Start the network service.
 	class func startListeningOnPort(port: Int32) -> NSNetService {
 		let service = NSNetService(domain:Tunnel.serviceDomain, type:Tunnel.serviceType, name: "", port: port)
