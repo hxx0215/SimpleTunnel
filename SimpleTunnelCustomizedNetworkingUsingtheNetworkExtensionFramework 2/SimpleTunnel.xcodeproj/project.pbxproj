@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3427F86B1C60E74E007BCFFA /* ProxyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427F86A1C60E74E007BCFFA /* ProxyServer.swift */; };
 		4408EBAB1B0C5C1F0011C5F9 /* UDPServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408EBAA1B0C5C1F0011C5F9 /* UDPServerConnection.swift */; };
 		442B69341B06721300382B6D /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B69331B06721300382B6D /* AppProxyProvider.swift */; };
 		442B69361B06721E00382B6D /* ClientAppProxyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B69351B06721E00382B6D /* ClientAppProxyConnection.swift */; };
@@ -166,6 +167,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3427F86A1C60E74E007BCFFA /* ProxyServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyServer.swift; sourceTree = "<group>"; };
 		4408EBAA1B0C5C1F0011C5F9 /* UDPServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPServerConnection.swift; sourceTree = "<group>"; };
 		442B692D1B0671DC00382B6D /* AppProxy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AppProxy.entitlements; path = AppProxy/AppProxy.entitlements; sourceTree = "<group>"; };
 		442B692F1B0671FA00382B6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AppProxy/Info.plist; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				B0D507F51A8943FD005D1195 /* PacketTunnelProvider.swift */,
 				C4B602051A8E61B300A3C5D4 /* ClientTunnelConnection.swift */,
 				B973D1221C4BCCB300B3B2A8 /* ServerTunnel.swift */,
+				3427F86A1C60E74E007BCFFA /* ProxyServer.swift */,
 				B07CCB6F1A89414500A4F1E5 /* Supporting Files */,
 			);
 			name = PacketTunnel;
@@ -778,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B973D1281C4C95ED00B3B2A8 /* ServerTunnel.swift in Sources */,
+				3427F86B1C60E74E007BCFFA /* ProxyServer.swift in Sources */,
 				C4B602061A8E61B300A3C5D4 /* ClientTunnelConnection.swift in Sources */,
 				C49ACF4D1A8AC97B00084324 /* PacketTunnelProvider.swift in Sources */,
 			);
