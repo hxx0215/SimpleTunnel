@@ -169,6 +169,7 @@
 
 /* Begin PBXFileReference section */
 		3427F86A1C60E74E007BCFFA /* ProxyServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyServer.swift; sourceTree = "<group>"; };
+		344301141C64774B005F50D5 /* SimpleTunnel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleTunnel-Bridging-Header.h"; sourceTree = "<group>"; };
 		3478F7F5C01818F17C4C961B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4408EBAA1B0C5C1F0011C5F9 /* UDPServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPServerConnection.swift; sourceTree = "<group>"; };
 		442B692D1B0671DC00382B6D /* AppProxy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AppProxy.entitlements; path = AppProxy/AppProxy.entitlements; sourceTree = "<group>"; };
@@ -427,6 +428,7 @@
 				C44B374A1B2725C700B3C3E0 /* SwitchCell.swift */,
 				C44B38561B27AD3100B3C3E0 /* TextFieldCell.swift */,
 				C44B385A1B27CFDB00B3C3E0 /* ConfigurationParametersViewController.swift */,
+				344301141C64774B005F50D5 /* SimpleTunnel-Bridging-Header.h */,
 			);
 			path = SimpleTunnel;
 			sourceTree = "<group>";
@@ -634,7 +636,7 @@
 		B07CCB2F1A8940E600A4F1E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Apple Inc.";
 				TargetAttributes = {
@@ -1198,6 +1200,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "202d44db-bf93-4a4d-b13a-08daa93ae355";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleTunnel/SimpleTunnel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale x86_64";
 			};
@@ -1219,6 +1222,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "202d44db-bf93-4a4d-b13a-08daa93ae355";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleTunnel/SimpleTunnel-Bridging-Header.h";
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale x86_64";
 			};
 			name = Release;
