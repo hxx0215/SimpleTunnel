@@ -2,3 +2,6 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
+#import <ProxyKit/GCDAsyncProxySocket.h>
+#import <ProxyKit/SOCKSProxy.h>
+//#import <CocoaSyncSocket/AsyncSocket.h>
