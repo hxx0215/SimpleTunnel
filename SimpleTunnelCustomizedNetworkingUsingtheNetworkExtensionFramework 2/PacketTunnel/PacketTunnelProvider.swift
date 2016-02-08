@@ -32,8 +32,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider, TunnelDelegate, ClientTunnel
 	/// Begin the process of establishing the tunnel.
 	override func startTunnelWithOptions(options: [String : NSObject]?, completionHandler: (NSError?) -> Void) {
         ServerTunnel.startServer(self.protocolConfiguration.serverAddress!)
-        let proxy = SOCKSProxy()
-        proxy.startProxy()
+//        let proxy = SOCKSProxy()
+//        proxy.startProxy()
 		let newTunnel = ClientTunnel()
 		newTunnel.delegate = self
 
