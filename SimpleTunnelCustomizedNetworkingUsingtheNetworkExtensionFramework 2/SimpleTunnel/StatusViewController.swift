@@ -66,7 +66,7 @@ class StatusViewController: UITableViewController {
 
 		// Send a simple IPC message to the provider, handle the response.
 		if let session = targetManager.connection as? NETunnelProviderSession,
-			message = "Hello Provider".dataUsingEncoding(NSUTF8StringEncoding)
+			message = "HelloProvider".dataUsingEncoding(NSUTF8StringEncoding)
 			where targetManager.connection.status != .Invalid
 		{
 			do {
