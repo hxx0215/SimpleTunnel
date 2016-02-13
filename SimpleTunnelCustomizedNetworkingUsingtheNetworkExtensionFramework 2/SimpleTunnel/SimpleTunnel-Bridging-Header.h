@@ -4,4 +4,3 @@
 
 #import <ProxyKit/GCDAsyncProxySocket.h>
 #import <ProxyKit/SOCKSProxy.h>
-#import <CocoaSyncSocket/AsyncSocket.h>
